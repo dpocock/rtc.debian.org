@@ -1,0 +1,26 @@
+#!/bin/bash
+
+set -e
+
+if [ -z "$DEBIAN_USER" ];
+then
+  DEBIAN_USER=$USER
+fi
+
+WEB_HOST=dillon.debian.org
+WEB_SITE=rtc.debian.org
+WEB_PATH=/srv/${WEB_SITE}/htdocs
+
+DEST=${DEBIAN_USER}@${WEB_HOST}:${WEB_PATH}/
+
+echo "Sending files to ${WEB_HOST}..."
+rsync -azr --delete \
+   --exclude='.git/*' \
+   --exclude=deb-web-publish \
+         * ${DEST}
+
+echo "Distributing to all web servers..."
+ssh ${DEBIAN_USER}@${WEB_HOST} -C "sudo -u staticsync /usr/local/bin/static-update-component ${WEB_SITE}"
+
+echo "Successful - site is now live."
+
