@@ -21,7 +21,7 @@
   opacity: 0.7;
   position: absolute;
   bottom: 20px;
-  left: 20px;
+  right: 20px;
   z-index: -100;
 }
 
@@ -29,9 +29,14 @@
   padding-right: 5em;
 }
 
+#debrtc-tips {
+  margin-top: 5px;
+  float:left;
+  width: 650px;
+}
+
 #debrtc-links {
-  position: absolute;
-  bottom: 20px;
-  right: 20px;
+  float:left;
+  clear:left;
 }
 
