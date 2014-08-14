@@ -55,13 +55,22 @@ JSCommSettings = {
     video_dialing: true,         // Whether to offer a video call button
     prefer_video: true,         // If user presses Enter to dial, use video?
     no_answer_timeout: 60,       // How long to wait for answer (seconds)
+    clear_dialbox: false,          // Whether to clear dialbox after call/attempted call
   },
 
   session : {
     show_dtmf_pad : true,        // Whether to show a DTMF dialpad during calls
     dtmf_duration: 160,
+    dialpad_tone: true,
+    message_tone: true,
     require_relay_candidate: false
   },
+
+  i18n : {
+    translate: true,     // enables the call to i18n init function from JSCommManager.init()
+    show_menu: true,    // show the language chooser menu
+    default_lang: 'en',   // default language to use
+   },
 
   extra_headers : [
     // 'X-WS-Session-Extra: some_token=value'
