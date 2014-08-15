@@ -27,8 +27,8 @@ JSCommSettings = {
   // If sip_auth_user == null, it will be automatically derived from
   // the value of uri
   user: {
-    display_name: 'Your Name',
-    uri: 'sip:YOU@debian.org',
+    display_name: '',
+    uri: '',
     sip_auth_user: null,
     sip_auth_password: null,
     sip_auth_user_full_uri: true,   // Whether to use full URI or just
